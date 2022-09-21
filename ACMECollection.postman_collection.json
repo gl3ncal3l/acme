@@ -1,0 +1,267 @@
+{
+	"info": {
+		"_postman_id": "8144f830-3bf7-4cb6-82c9-105821e5d0f1",
+		"name": "ACMECollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"usuario\": \"Devel\", \r\n    \"contrasenia\": \"Systems\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7135/acme/JWT",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7135",
+					"path": [
+						"acme",
+						"JWT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Encuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjYzNzk0MDQ2LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTM1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzEzNSJ9.-iQY3Q1B7CJbds5K-Leoi6VU1gnUBT_OuHH5Dw6s_0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Encuesta #1\",\r\n    \"descripcion\": \"Encuesta ACME #1\",\r\n    \"campos\": [\r\n        {\r\n            \"nombre\": \"Nombre\",\r\n            \"titulo\": \"Nombres\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        },\r\n        {\r\n            \"nombre\": \"Apellido\",\r\n            \"titulo\": \"Apellidos\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        },\r\n        {\r\n            \"nombre\": \"Telefono\",\r\n            \"titulo\": \"Teléfono\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"number\"\r\n        },\r\n        {\r\n            \"nombre\": \"Direccion\",\r\n            \"titulo\": \"Dirección\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        },\r\n        {\r\n            \"nombre\": \"Correo\",\r\n            \"titulo\": \"Correo Electrónico\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7135/acme/Encuesta",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7135",
+					"path": [
+						"acme",
+						"Encuesta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Encuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjYzNzk0MDQ2LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTM1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzEzNSJ9.-iQY3Q1B7CJbds5K-Leoi6VU1gnUBT_OuHH5Dw6s_0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7135/acme/Encuesta?id_encuesta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7135",
+					"path": [
+						"acme",
+						"Encuesta"
+					],
+					"query": [
+						{
+							"key": "id_encuesta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Encuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjYzNzk0MDQ2LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTM1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzEzNSJ9.-iQY3Q1B7CJbds5K-Leoi6VU1gnUBT_OuHH5Dw6s_0I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"nombre\": \"Modificar Encuesta #1\",\r\n    \"descripcion\": \"Modificar Encuesta ACME #8\",\r\n    \"campos\": [\r\n        {\r\n            \"nombre\": \"Nombre\",\r\n            \"titulo\": \"First Namee\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        },\r\n        {\r\n            \"nombre\": \"Apellido\",\r\n            \"titulo\": \"Last Name\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        },\r\n        {\r\n            \"nombre\": \"Telefono\",\r\n            \"titulo\": \"Phone number\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"number\"\r\n        },\r\n        {\r\n            \"nombre\": \"Direccion\",\r\n            \"titulo\": \"Address\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        },\r\n        {\r\n            \"nombre\": \"Correo\",\r\n            \"titulo\": \"Email\",\r\n            \"requerido\": \"s\",\r\n            \"tipo\": \"text\"\r\n        }\r\n    ]\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7135/acme/Encuesta?id_encuesta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7135",
+					"path": [
+						"acme",
+						"Encuesta"
+					],
+					"query": [
+						{
+							"key": "id_encuesta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar Respuesta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"respuesta\":\"Glen\",\r\n        \"nombre\":\"Nombre\"\r\n    },\r\n    {\r\n        \"respuesta\":\"Calel\",\r\n        \"nombre\":\"Apellido\"\r\n    },\r\n    {\r\n        \"respuesta\":\"12345678\",\r\n        \"nombre\":\"Telefono\"\r\n    },\r\n    {\r\n        \"respuesta\":\"San José Villa Nueva\",\r\n        \"nombre\":\"Direccion\"\r\n    },\r\n    {\r\n        \"respuesta\":\"gc@gmail.com\",\r\n        \"nombre\":\"Correo\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7135/acme/Encuesta/AgregarRespuesta?id_encuesta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7135",
+					"path": [
+						"acme",
+						"Encuesta",
+						"AgregarRespuesta"
+					],
+					"query": [
+						{
+							"key": "id_encuesta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Respuestas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjYzNzkyNjk4LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTM1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzEzNSJ9.iJpTNaKLZXmCNcre3SzlHxkQTthZ321K3wrbFdysfNw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7135/acme/Encuesta/ObtenerRespuestas?id_encuesta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7135",
+					"path": [
+						"acme",
+						"Encuesta",
+						"ObtenerRespuestas"
+					],
+					"query": [
+						{
+							"key": "id_encuesta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar Encuesta",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IkRldmVsIiwiZXhwIjoxNjYzNzkyNjk4LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MTM1IiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzEzNSJ9.iJpTNaKLZXmCNcre3SzlHxkQTthZ321K3wrbFdysfNw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7135/acme/Encuesta?id_encuesta=1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7135",
+					"path": [
+						"acme",
+						"Encuesta"
+					],
+					"query": [
+						{
+							"key": "id_encuesta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
